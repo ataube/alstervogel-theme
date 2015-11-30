@@ -16,8 +16,8 @@
 // Text
 //
 
-@global-link-color: #1fa2d6;
-@global-link-hover-color: #0074a2;
+@global-link-color: #99bf38;
+@global-link-hover-color: #81a131;
 
 //
 // Backgrounds & Borders
@@ -71,7 +71,19 @@
 // Navbar
 //
 
-@navbar-nav-height: 45px;
+@navbar-background: #99bf38;
+@navbar-nav-height: 70px;
+@navbar-nav-font-size: 16px;
+@navbar-nav-font-family: @base-body-font-family;
+@navbar-nav-color: #fff;
+@navbar-nav-hover-background: #81a131;
+@navbar-nav-hover-color: #fff;
+@navbar-nav-active-background: #81a131;
+@navbar-nav-active-color: #fff;
+
+.hook-navbar-nav() {
+  text-transform: uppercase;
+}
 
 //
 // Button
@@ -111,3 +123,13 @@
 
 @utility-heading-large-font-size: round(@global-font-size * 3.71); // 52px
 @utility-heading-large-line-height: round(@utility-heading-large-font-size * 1.23); // 64px
+
+//
+//Search
+//
+@search-color: #fff;
+@search-icon-size: 15px;
+@search-icon-color: rgba(0,0,0,0.2);
+.hook-search-field() {
+  font-size: @search-icon-size;
+}
