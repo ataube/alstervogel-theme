@@ -48,25 +48,29 @@ include($this['path']->path('layouts:theme.config.php'));
 		<?php endif; ?>
 
 		<?php if ($this['widgets']->count('menu + search')) : ?>
-		<nav class="tm-navbar uk-navbar">
+		<nav class="tm-navbar">
 
-			<?php if ($this['widgets']->count('menu')) : ?>
-			<?php echo $this['widgets']->render('menu'); ?>
-			<?php endif; ?>
+			<div class="uk-navbar" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
 
-			<?php if ($this['widgets']->count('offcanvas')) : ?>
-			<a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
-			<?php endif; ?>
+				<?php if ($this['widgets']->count('menu')) : ?>
+				<?php echo $this['widgets']->render('menu'); ?>
+				<?php endif; ?>
 
-			<?php if ($this['widgets']->count('search')) : ?>
-			<div class="uk-navbar-flip">
-				<div class="uk-navbar-content uk-hidden-small"><?php echo $this['widgets']->render('search'); ?></div>
+				<?php if ($this['widgets']->count('offcanvas')) : ?>
+				<a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+				<?php endif; ?>
+
+				<?php if ($this['widgets']->count('search')) : ?>
+				<div class="uk-navbar-flip">
+					<div class="uk-navbar-content uk-hidden-small"><?php echo $this['widgets']->render('search'); ?></div>
+				</div>
+				<?php endif; ?>
+
+				<?php if ($this['widgets']->count('logo-small')) : ?>
+				<div class="uk-navbar-content uk-navbar-center uk-visible-small"><a class="tm-logo-small" href="<?php echo $this['config']->get('site_url'); ?>"><?php echo $this['widgets']->render('logo-small'); ?></a></div>
+				<?php endif; ?>
+
 			</div>
-			<?php endif; ?>
-
-			<?php if ($this['widgets']->count('logo-small')) : ?>
-			<div class="uk-navbar-content uk-navbar-center uk-visible-small"><a class="tm-logo-small" href="<?php echo $this['config']->get('site_url'); ?>"><?php echo $this['widgets']->render('logo-small'); ?></a></div>
-			<?php endif; ?>
 
 		</nav>
 		<?php endif; ?>
