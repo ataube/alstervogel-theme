@@ -40,8 +40,9 @@
 @base-h4-line-height: round(@base-h4-font-size * 1.33); // 24px
 @base-selection-background: #1fa2d6;
 @base-body-font-family: 'Open Sans';
+@base-body-font-weight: 300;
 @base-heading-font-family: 'Open Sans';
-@base-heading-font-weight: 300;
+@base-heading-font-weight: 400;
 
 //
 // Panel
@@ -66,6 +67,10 @@
 @nav-dropdown-hover-box-shadow: rgba(0,69,109,0.25);
 @nav-navbar-hover-box-shadow: rgba(0,69,109,0.25);
 @nav-search-active-box-shadow: rgba(0,69,109,0.25);
+
+.hook-navbar() {
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.05);
+}
 
 //
 // Navbar
@@ -127,9 +132,11 @@
 //
 //Search
 //
-@search-color: #fff;
-@search-icon-size: 15px;
-@search-icon-color: rgba(0,0,0,0.2);
+@search-icon-color: rgb(255, 255, 255, 0.5);
+@search-icon-size: 16px;
+@search-placeholder-color: #ffffff;
+@search-color: #ffffff;
 .hook-search-field() {
   font-size: @search-icon-size;
+  opacity: 0.5;
 }
