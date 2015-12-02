@@ -16,8 +16,8 @@
 // Text
 //
 
-@global-link-color: #1fa2d6;
-@global-link-hover-color: #0074a2;
+@global-link-color: #99bf38;
+@global-link-hover-color: #81a131;
 
 //
 // Backgrounds & Borders
@@ -40,16 +40,31 @@
 @base-h4-line-height: round(@base-h4-font-size * 1.33); // 24px
 @base-selection-background: #1fa2d6;
 @base-body-font-family: 'Open Sans';
+@base-body-font-weight: 300;
 @base-heading-font-family: 'Open Sans';
-@base-heading-font-weight: 300;
+@base-heading-font-weight: 400;
+
 
 //
 // Panel
 //
+@panel-title-font-weight: 300;
 
 @panel-box-primary-background: #eefaff;
 @panel-box-primary-color: #699eb3;
 @panel-box-primary-title-color: #3484a4;
+
+@panel-box-secondary-background: #444;
+@panel-box-secondary-color: #969696;
+@panel-box-secondary-title-color: #99bf38;
+
+.hook-panel-box-secondary() {
+
+  h4 {
+    color : #99bf38
+  }
+
+}
 
 //
 // Article
@@ -63,15 +78,34 @@
 
 @nav-padding-horizontal: 20px;
 @nav-side-active-box-shadow: rgba(0,69,109,0.25);
+@nav-side-active-background: #99bf38;
 @nav-dropdown-hover-box-shadow: rgba(0,69,109,0.25);
 @nav-navbar-hover-box-shadow: rgba(0,69,109,0.25);
 @nav-search-active-box-shadow: rgba(0,69,109,0.25);
+@nav-navbar-hover-background: #99bf38;
+
+.hook-navbar() {
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
 
 //
 // Navbar
 //
 
-@navbar-nav-height: 45px;
+@navbar-background: #99bf38;
+@navbar-nav-height: 70px;
+@navbar-nav-font-size: 16px;
+@navbar-nav-font-family: @base-body-font-family;
+@navbar-nav-color: #fff;
+@navbar-nav-hover-background: #81a131;
+@navbar-nav-hover-color: #fff;
+@navbar-nav-active-background: #81a131;
+@navbar-nav-active-color: #fff;
+
+.hook-navbar-nav() {
+  text-transform: uppercase;
+}
 
 //
 // Button
@@ -111,3 +145,15 @@
 
 @utility-heading-large-font-size: round(@global-font-size * 3.71); // 52px
 @utility-heading-large-line-height: round(@utility-heading-large-font-size * 1.23); // 64px
+
+//
+//Search
+//
+@search-icon-color: rgb(255, 255, 255, 0.5);
+@search-icon-size: 16px;
+@search-placeholder-color: #ffffff;
+@search-color: #ffffff;
+.hook-search-field() {
+  font-size: @search-icon-size;
+  opacity: 0.5;
+}
